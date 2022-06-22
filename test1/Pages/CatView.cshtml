@@ -1,0 +1,57 @@
+﻿@page
+@using test1.Models
+@model test1.Pages.CatViewModel
+@{
+  ViewData["Title"] = "Cat List";
+}
+
+<h1>Cat List</h1>
+
+<form method="post" class="card p-3">
+  <div class="row">
+    <div asp-validation-summary="All"></div>
+  </div>
+  <div class="form-group mb-0 align-middle">
+    <label asp-for="NewCat.Name">Name:</label>
+    <input type="text" asp-for="NewCat.Name" class="mr-5">
+    <label asp-for="NewCat.Age">Age:</label>
+    <input asp-for="NewCat.Age" class="mr-5"/>
+    <label asp-for="NewCat.Colour"</label>
+    <select asp-for="NewCat.Colour" asp-items="Html.GetEnumSelectList<CatColours>() class="mr-5"></select>
+    <label asp-for="NewCat.AllowedOutside">Allowed Outside:</label>
+    <input type="checkbox" asp-for="NewCat.AllowedOutside" class="mr-5">
+    <button class="btn primary">Add Cat</button>
+  </div>
+</form>
+
+<table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Allowed Outside</th>
+      <th scope="col">Colour</th>
+      <th scope="col">REMOVE</th>
+    </tr>
+  </thead>
+  @foreach (var cat in Model.cats)
+  {
+    <tr>
+      <td>@cat.Name</td>
+      <td>@($"cat.Age:C}")</td>
+      <td>@cat.AllowedOutside</td>
+      <td>@cat.Colour</td>
+      <td>
+        <form method="post" asp-page-handler="Delete" asp-route-id="@cat.Name">
+          <button class="btn btn-danger">Remove</button>
+        </form>
+      </td>
+    </tr>
+  }
+</table>
+
+@section Scripts {
+<partial name="_ValidationScriptsPartial" />
+}
+
+

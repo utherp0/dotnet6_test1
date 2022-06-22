@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/uther/git/dotnet6_test1/test1
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/uther/git/dotnet6_test1/test1/Pages/CatView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ2F0Vmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/uther/git/dotnet6_test1/test1/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
