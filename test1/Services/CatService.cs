@@ -16,12 +16,12 @@ public static class CatService
       new Cat { Name = "Kali", Age = 9, AllowedOutside = false },
       new Cat { Name = "Jessie", Age = 7, AllowedOutside = true },
       new Cat { Name = "Murphy", Age = 7, AllowedOutside = false }
-    }
+    };
   }
 
   public static List<Cat> GetAll() => Cats;
 
-  public static Cat? Get( string name ) => Cats.FirstOrDefault(target => target.Name == name );
+  public static Cat Get( string name ) => Cats.FirstOrDefault(target => target.Name == name );
 
   public static void Add( Cat cat )
   {
