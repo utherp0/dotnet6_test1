@@ -1,6 +1,8 @@
 ﻿@page
+
 @using test1.Models
-@model test1.Pages.CatViewModel
+
+@model test1.Pages.CatModel
 @{
   ViewData["Title"] = "Cat List";
 }
@@ -16,8 +18,8 @@
     <input type="text" asp-for="NewCat.Name" class="mr-5">
     <label asp-for="NewCat.Age">Age:</label>
     <input asp-for="NewCat.Age" class="mr-5"/>
-    <label asp-for="NewCat.Colour"</label>
-    <select asp-for="NewCat.Colour" asp-items="Html.GetEnumSelectList<CatColours>() class="mr-5"></select>
+    <label asp-for="NewCat.Colour"></label>
+    <select asp-for="NewCat.Colour" asp-items="Html.GetEnumSelectList<CatColours>()" class="mr-5"></select>
     <label asp-for="NewCat.AllowedOutside">Allowed Outside:</label>
     <input type="checkbox" asp-for="NewCat.AllowedOutside" class="mr-5">
     <button class="btn primary">Add Cat</button>
@@ -38,7 +40,7 @@
   {
     <tr>
       <td>@cat.Name</td>
-      <td>@($"cat.Age:C}")</td>
+      <td>@(cat.Age)</td>
       <td>@cat.AllowedOutside</td>
       <td>@cat.Colour</td>
       <td>
